@@ -1,0 +1,1213 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Issue Management API Reference"
+  },
+  "host": "localhost:9090",
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "ticket-controller",
+      "description": "Ticket Controller"
+    },
+    {
+      "name": "company-controller",
+      "description": "Company Controller"
+    },
+    {
+      "name": "flight-controller",
+      "description": "Flight Controller"
+    },
+    {
+      "name": "plane-controller",
+      "description": "Plane Controller"
+    },
+    {
+      "name": "route-controller",
+      "description": "Route Controller"
+    },
+    {
+      "name": "airport-controller",
+      "description": "Airport Controller"
+    }
+  ],
+  "paths": {
+    "/api/airport": {
+      "get": {
+        "tags": [
+          "airport-controller"
+        ],
+        "summary": "Get All Operation",
+        "operationId": "getAllUsingGET",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/AirportEntityObject"
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "airport-controller"
+        ],
+        "summary": "Create Operation",
+        "operationId": "createUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "airport",
+            "description": "airport",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/AirportEntityObject"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/AirportEntityObject"
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "airport-controller"
+        ],
+        "summary": "Update Operation",
+        "operationId": "updateUsingPUT",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "airport",
+            "description": "airport",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/AirportEntityObject"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/AirportEntityObject"
+            }
+          }
+        }
+      }
+    },
+    "/api/airport/{id}": {
+      "get": {
+        "tags": [
+          "airport-controller"
+        ],
+        "summary": "Get By Id Operation",
+        "operationId": "getByIdUsingGET",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/AirportEntityObject"
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "airport-controller"
+        ],
+        "summary": "Delete Operation",
+        "operationId": "deleteUsingDELETE",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object"
+            }
+          }
+        }
+      }
+    },
+    "/api/company": {
+      "get": {
+        "tags": [
+          "company-controller"
+        ],
+        "summary": "Get All Operation",
+        "operationId": "getAllUsingGET_1",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/CompanyEntityObject"
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "company-controller"
+        ],
+        "summary": "Create Operation",
+        "operationId": "createUsingPOST_1",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "company",
+            "description": "company",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CompanyEntityObject"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/CompanyEntityObject"
+            }
+          }
+        }
+      }
+    },
+    "/api/company/{id}": {
+      "get": {
+        "tags": [
+          "company-controller"
+        ],
+        "summary": "Get By Id Operation",
+        "operationId": "getByIdUsingGET_1",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/CompanyEntityObject"
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "company-controller"
+        ],
+        "summary": "Update Operation",
+        "operationId": "updateUsingPUT_1",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "body",
+            "name": "company",
+            "description": "company",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CompanyEntityObject"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/CompanyEntityObject"
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "company-controller"
+        ],
+        "summary": "Delete Operation",
+        "operationId": "deleteUsingDELETE_1",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        }
+      }
+    },
+    "/api/flight": {
+      "get": {
+        "tags": [
+          "flight-controller"
+        ],
+        "summary": "Get All Operation",
+        "operationId": "getAllUsingGET_2",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/FlightEntityObject"
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "flight-controller"
+        ],
+        "summary": "Create Operation",
+        "operationId": "createUsingPOST_2",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "flight",
+            "description": "flight",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/FlightEntityObject"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/FlightEntityObject"
+            }
+          }
+        }
+      }
+    },
+    "/api/flight/{id}": {
+      "get": {
+        "tags": [
+          "flight-controller"
+        ],
+        "summary": "Get By Id Operation",
+        "operationId": "getByIdUsingGET_2",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/FlightEntityObject"
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "flight-controller"
+        ],
+        "summary": "Update Operation",
+        "operationId": "updateUsingPUT_2",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "body",
+            "name": "flight",
+            "description": "flight",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/FlightEntityObject"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/FlightEntityObject"
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "flight-controller"
+        ],
+        "summary": "Delete Operation",
+        "operationId": "deleteUsingDELETE_2",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object"
+            }
+          }
+        }
+      }
+    },
+    "/api/plane": {
+      "get": {
+        "tags": [
+          "plane-controller"
+        ],
+        "summary": "Get All Operation",
+        "operationId": "getAllUsingGET_3",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/PlaneEntityObject"
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "plane-controller"
+        ],
+        "summary": "Create Operation",
+        "operationId": "createUsingPOST_3",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "plane",
+            "description": "plane",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/PlaneEntityObject"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/PlaneEntityObject"
+            }
+          }
+        }
+      }
+    },
+    "/api/plane/{id}": {
+      "get": {
+        "tags": [
+          "plane-controller"
+        ],
+        "summary": "Get By Id Operation",
+        "operationId": "getByIdUsingGET_3",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/PlaneEntityObject"
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "plane-controller"
+        ],
+        "summary": "Update Operation",
+        "operationId": "updateUsingPUT_3",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "body",
+            "name": "plane",
+            "description": "plane",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/PlaneEntityObject"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/PlaneEntityObject"
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "plane-controller"
+        ],
+        "summary": "Delete Operation",
+        "operationId": "deleteUsingDELETE_3",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object"
+            }
+          }
+        }
+      }
+    },
+    "/api/route": {
+      "get": {
+        "tags": [
+          "route-controller"
+        ],
+        "summary": "Get All Operation",
+        "operationId": "getAllUsingGET_4",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/RouteEntityObject"
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "route-controller"
+        ],
+        "summary": "Create Operation",
+        "operationId": "createUsingPOST_4",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "route",
+            "description": "route",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/RouteEntityObject"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/RouteEntityObject"
+            }
+          }
+        }
+      }
+    },
+    "/api/route/{id}": {
+      "get": {
+        "tags": [
+          "route-controller"
+        ],
+        "summary": "Get By Id Operation",
+        "operationId": "getByIdUsingGET_4",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/RouteEntityObject"
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "route-controller"
+        ],
+        "summary": "Update Operation",
+        "operationId": "updateUsingPUT_4",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "body",
+            "name": "route",
+            "description": "route",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/RouteEntityObject"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/RouteEntityObject"
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "route-controller"
+        ],
+        "summary": "Delete Operation",
+        "operationId": "deleteUsingDELETE_4",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object"
+            }
+          }
+        }
+      }
+    },
+    "/api/ticket": {
+      "get": {
+        "tags": [
+          "ticket-controller"
+        ],
+        "summary": "Get All Operation",
+        "operationId": "getAllUsingGET_5",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/TicketEntityObject"
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "ticket-controller"
+        ],
+        "summary": "Create Operation",
+        "operationId": "createUsingPOST_5",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "ticket",
+            "description": "ticket",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/TicketEntityObject"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/TicketEntityObject"
+            }
+          }
+        }
+      }
+    },
+    "/api/ticket/{id}": {
+      "get": {
+        "tags": [
+          "ticket-controller"
+        ],
+        "summary": "Get By Id Operation",
+        "operationId": "getByIdUsingGET_5",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/TicketEntityObject"
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "ticket-controller"
+        ],
+        "summary": "Update Operation",
+        "operationId": "updateUsingPUT_5",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "body",
+            "name": "ticket",
+            "description": "ticket",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/TicketEntityObject"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/TicketEntityObject"
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "ticket-controller"
+        ],
+        "summary": "Delete Operation",
+        "operationId": "deleteUsingDELETE_5",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "TicketEntityObject": {
+      "type": "object",
+      "required": [
+        "ticketCode"
+      ],
+      "properties": {
+        "flight": {
+          "$ref": "#/definitions/FlightEntityObject"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int64",
+          "description": "Ticket Id"
+        },
+        "isSold": {
+          "type": "boolean",
+          "example": false,
+          "description": "Is Ticket Sold"
+        },
+        "price": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Price of Ticket"
+        },
+        "ticketCode": {
+          "type": "string",
+          "description": "Code of Ticket"
+        }
+      }
+    },
+    "CompanyEntityObject": {
+      "type": "object",
+      "required": [
+        "name"
+      ],
+      "properties": {
+        "flights": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/FlightEntityObject"
+          }
+        },
+        "id": {
+          "type": "integer",
+          "format": "int64",
+          "description": "Company Id"
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of Company"
+        },
+        "planes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PlaneEntityObject"
+          }
+        }
+      }
+    },
+    "FlightEntityObject": {
+      "type": "object",
+      "required": [
+        "name"
+      ],
+      "properties": {
+        "arrivalDateTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Arrival Date and Time"
+        },
+        "company": {
+          "$ref": "#/definitions/CompanyEntityObject"
+        },
+        "departureDateTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Departure Date and Time"
+        },
+        "duration": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Flight Duration"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int64",
+          "description": "Flight Id"
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of Flight"
+        },
+        "quota": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Flight Quota"
+        },
+        "quotaFilled": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Flight Quota Filled"
+        },
+        "quotaFilledPercentage": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Flight Quota Percentage"
+        },
+        "route": {
+          "$ref": "#/definitions/RouteEntityObject"
+        },
+        "tickets": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TicketEntityObject"
+          }
+        }
+      }
+    },
+    "RouteEntityObject": {
+      "type": "object",
+      "required": [
+        "name"
+      ],
+      "properties": {
+        "arrivalAirport": {
+          "$ref": "#/definitions/AirportEntityObject"
+        },
+        "departureAirport": {
+          "$ref": "#/definitions/AirportEntityObject"
+        },
+        "flights": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/FlightEntityObject"
+          }
+        },
+        "id": {
+          "type": "integer",
+          "format": "int64",
+          "description": "Route Id"
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of Route"
+        }
+      }
+    },
+    "AirportEntityObject": {
+      "type": "object",
+      "required": [
+        "name"
+      ],
+      "properties": {
+        "arrivalRoutes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/RouteEntityObject"
+          }
+        },
+        "capacity": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Capacity of Airport"
+        },
+        "departureRoutes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/RouteEntityObject"
+          }
+        },
+        "id": {
+          "type": "integer",
+          "format": "int64",
+          "description": "Airport Id"
+        },
+        "location": {
+          "type": "string",
+          "description": "Location of Airport"
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of Airport"
+        }
+      }
+    },
+    "PlaneEntityObject": {
+      "type": "object",
+      "required": [
+        "name"
+      ],
+      "properties": {
+        "company": {
+          "$ref": "#/definitions/CompanyEntityObject"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int64",
+          "description": "Plane Id"
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of Plane"
+        },
+        "numberOfSeats": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Number Of Seats"
+        }
+      }
+    }
+  }
+}

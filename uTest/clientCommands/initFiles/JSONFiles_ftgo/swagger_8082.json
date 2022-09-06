@@ -1,0 +1,74 @@
+{"swagger":"2.0","info":{"description":"Api Documentation","version":"1.0","title":"Api Documentation","termsOfService":"urn:tos","contact":{},"license":{"name":"Apache 2.0","url":"http://www.apache.org/licenses/LICENSE-2.0"}},
+"host":"localhost:8082",
+"tags":[{"name":"order-controller","description":"Order Controller"},{"name":"restaurant-controller","description":"Restaurant Controller"}],
+
+"paths":{
+    
+    "/orders":{
+        "post":{"tags":["order-controller"],
+            "summary":"create",
+            "operationId":"createUsingPOST",
+            "consumes":["application/json"],
+            "produces":["*/*"],
+            "parameters":[
+                {"in":"body",
+                    "name":"request",
+                    "description":"request",
+                    "required":true,
+                    "schema":{"$ref":"#/definitions/CreateOrderRequest"}}],
+            "responses":{
+                "200":{
+                    "description":"OK",
+                    "schema":{"$ref":"#/definitions/CreateOrderResponse"}}}}},
+            
+    "/orders/{orderId}":{
+        "get":{"tags":["order-controller"],"summary":"getOrder","operationId":"getOrderUsingGET","produces":["*/*"],
+            "parameters":[{"name":"orderId","in":"path","description":"orderId","required":true,"type":"integer","format":"int64"}],
+            "responses":{"200":{"description":"OK","schema":{"$ref":"#/definitions/GetOrderResponse"}}}}},
+    
+    "/orders/{orderId}/cancel":{
+        "post":{"tags":["order-controller"],"summary":"cancel","operationId":"cancelUsingPOST","consumes":["application/json"],"produces":["*/*"],
+            "parameters":[{"name":"orderId","in":"path","description":"orderId","required":true,"type":"integer","format":"int64"}],
+            "responses":{"200":{"description":"OK","schema":{"$ref":"#/definitions/GetOrderResponse"}}}}},
+        
+    "/orders/{orderId}/revise":{
+        "post":{"tags":["order-controller"],"summary":"revise","operationId":"reviseUsingPOST","consumes":["application/json"],"produces":["*/*"],
+            "parameters":[{"name":"orderId","in":"path","description":"orderId","required":true,"type":"integer","format":"int64"},
+                        {"in":"body","name":"request","description":"request","required":true,"schema":{"$ref":"#/definitions/ReviseOrderRequest"}}],
+            "responses":{"200":{"description":"OK","schema":{"$ref":"#/definitions/GetOrderResponse"}}}}},
+            
+    "/restaurants/{restaurantId}":{
+        "get":{"tags":["restaurant-controller"],"summary":"getRestaurant","operationId":"getRestaurantUsingGET","produces":["*/*"],
+            "parameters":[{"name":"restaurantId","in":"path","description":"restaurantId","required":true,"type":"integer","format":"int64"}],
+            "responses":{"200":{"description":"OK","schema":{"$ref":"#/definitions/GetRestaurantResponse"}}}}}},
+            
+"definitions":{
+    "Address":{"type":"object",
+        "properties":{
+            "city":{"type":"string"},
+            "state":{"type":"string"},
+            "street1":{"type":"string"},
+            "street2":{"type":"string"},
+            "zip":{"type":"string"}},
+        "title":"Address"},
+    
+    "CreateOrderRequest":{"type":"object",
+        "properties":{
+            "consumerId":{"type":"integer","format":"int64"},
+            "deliveryAddress":{"$ref":"#/definitions/Address"},
+            "deliveryTime":{"type":"string","format":"date-time"},
+            "lineItems":{"type":"array","items":{"$ref":"#/definitions/LineItem"}},
+            "restaurantId":{"type":"integer","format":"int64"}},
+        "title":"CreateOrderRequest"},
+    
+    "CreateOrderResponse":{"type":"object","properties":{"orderId":{"type":"integer","format":"int64"}},"title":"CreateOrderResponse"},
+    
+    "GetOrderResponse":{"type":"object","properties":{"orderId":{"type":"integer","format":"int64"},"orderTotal":{"type":"string"},"state":{"type":"string","enum":["APPROVAL_PENDING","APPROVED","REJECTED","CANCEL_PENDING","CANCELLED","REVISION_PENDING"]}},"title":"GetOrderResponse"},
+    
+    "GetRestaurantResponse":{"type":"object","properties":{"restaurantId":{"type":"integer","format":"int64"}},"title":"GetRestaurantResponse"},
+    
+    "LineItem":{"type":"object","properties":{"menuItemId":{"type":"string"},"quantity":{"type":"integer","format":"int32"}},"title":"LineItem"},
+    
+    "ReviseOrderRequest":{"type":"object","properties":{"revisedOrderLineItems":{"type":"array","items":{"$ref":"#/definitions/RevisedOrderLineItem"}}},"title":"ReviseOrderRequest"},
+    
+    "RevisedOrderLineItem":{"type":"object","properties":{"menuItemId":{"type":"string"},"quantity":{"type":"integer","format":"int32"}},"title":"RevisedOrderLineItem"}}}

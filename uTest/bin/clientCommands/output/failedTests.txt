@@ -1,0 +1,162 @@
+
+----------------------------------------
+url: http://host.docker.internal:9090/
+Method: DELETE
+Expected Responses: 
+200 204 401 403 
+Returned Response: 404
+Response Time: 47 ms
+Priority: 0.0
+
+----------------------------------------
+url: http://host.docker.internal:9090/
+Method: PATCH
+Expected Responses: 
+200 204 401 403 
+Returned Response: 404
+Response Time: 899 ms
+Priority: 0.0
+
+----------------------------------------
+url: http://host.docker.internal:9090/
+Method: HEAD
+Expected Responses: 
+200 204 401 403 
+Returned Response: 404
+Response Time: 69 ms
+Priority: 0.0
+
+----------------------------------------
+url: http://host.docker.internal:9090/
+Method: OPTIONS
+Expected Responses: 
+200 204 401 403 
+Returned Response: 404
+Response Time: 33 ms
+Priority: 0.0
+
+----------------------------------------
+url: http://host.docker.internal:9090/api/owners/1277413768
+Method: DELETE
+Expected Responses: 
+200 204 401 403 
+Returned Response: 404
+Response Time: 20 ms
+Priority: 0.0
+
+----------------------------------------
+url: http://host.docker.internal:9090/api/owners/92
+Method: DELETE
+Expected Responses: 
+200 204 401 403 
+Returned Response: 404
+Response Time: 33 ms
+Priority: 0.0
+
+----------------------------------------
+url: http://host.docker.internal:9090/api/pettypes/1316239262
+Method: DELETE
+Expected Responses: 
+200 204 401 403 
+Returned Response: 404
+Response Time: 39 ms
+Priority: 0.0
+
+----------------------------------------
+url: http://host.docker.internal:9090/api/pettypes/19
+Method: DELETE
+Expected Responses: 
+200 204 401 403 
+Returned Response: 404
+Response Time: 28 ms
+Priority: 0.0
+
+----------------------------------------
+url: http://host.docker.internal:9090/api/specialties/250158819
+Method: DELETE
+Expected Responses: 
+200 204 401 403 
+Returned Response: 404
+Response Time: 24 ms
+Priority: 0.0
+
+----------------------------------------
+url: http://host.docker.internal:9090/api/specialties/1
+Method: DELETE
+Expected Responses: 
+200 204 401 403 
+Returned Response: 404
+Response Time: 33 ms
+Priority: 0.0
+
+----------------------------------------
+url: http://host.docker.internal:9090/api/vets/1934863316
+Method: DELETE
+Expected Responses: 
+200 204 401 403 
+Returned Response: 404
+Response Time: 37 ms
+Priority: 0.0
+
+----------------------------------------
+url: http://host.docker.internal:9090/api/vets/44
+Method: DELETE
+Expected Responses: 
+200 204 401 403 
+Returned Response: 404
+Response Time: 27 ms
+Priority: 0.0
+
+----------------------------------------
+url: http://host.docker.internal:9090/api/visits/1758285451
+Method: DELETE
+Expected Responses: 
+200 204 401 403 
+Returned Response: 404
+Response Time: 24 ms
+Priority: 0.0
+
+----------------------------------------
+url: http://host.docker.internal:9090/api/visits/4
+Method: DELETE
+Expected Responses: 
+200 204 401 403 
+Returned Response: 404
+Response Time: 32 ms
+Priority: 0.0
+
+----------------------------------------
+url: http://host.docker.internal:9090/error
+Method: DELETE
+Expected Responses: 
+200 204 401 403 
+Returned Response: 404
+Response Time: 30 ms
+Priority: 0.0
+
+----------------------------------------
+url: http://host.docker.internal:9090/error
+Method: PATCH
+Expected Responses: 
+200 204 401 403 
+Returned Response: 404
+Response Time: 44 ms
+Priority: 0.0
+
+----------------------------------------
+url: http://host.docker.internal:9090/error
+Method: HEAD
+Expected Responses: 
+200 204 401 403 
+Returned Response: 404
+Response Time: 35 ms
+Priority: 0.0
+
+----------------------------------------
+url: http://host.docker.internal:9090/error
+Method: OPTIONS
+Expected Responses: 
+200 204 401 403 
+Returned Response: 404
+Response Time: 31 ms
+Priority: 0.0

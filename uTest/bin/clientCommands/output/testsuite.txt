@@ -1,0 +1,91 @@
+********************** 45 Test Frame **********************
+- http://host.docker.internal:9090/ | Method:GET | #Ic: 0 | Body: null | Expected responses: 200 401 403 404  | Valid/nonValid combination: 
+ | Priority: 0.0
+- http://host.docker.internal:9090/ | Method:PUT | #Ic: 0 | Body: null | Expected responses: 200 201 401 403 404  | Valid/nonValid combination: 
+ | Priority: 0.0
+- http://host.docker.internal:9090/ | Method:POST | #Ic: 0 | Body: null | Expected responses: 200 201 401 403 404  | Valid/nonValid combination: 
+ | Priority: 0.0
+- http://host.docker.internal:9090/ | Method:DELETE | #Ic: 0 | Body: null | Expected responses: 200 204 401 403  | Valid/nonValid combination: 
+ | Priority: 0.0
+- http://host.docker.internal:9090/ | Method:PATCH | #Ic: 0 | Body: null | Expected responses: 200 204 401 403  | Valid/nonValid combination: 
+ | Priority: 0.0
+- http://host.docker.internal:9090/ | Method:HEAD | #Ic: 0 | Body: null | Expected responses: 200 204 401 403  | Valid/nonValid combination: 
+ | Priority: 0.0
+- http://host.docker.internal:9090/ | Method:OPTIONS | #Ic: 0 | Body: null | Expected responses: 200 204 401 403  | Valid/nonValid combination: 
+ | Priority: 0.0
+- http://host.docker.internal:9090/api/owners | Method:GET | #Ic: 0 | Body: null | Expected responses: 200 401 403 404  | Valid/nonValid combination: 
+ | Priority: 0.0
+- http://host.docker.internal:9090/api/owners | Method:POST | #Ic: 9 | Body: {"address":"{address}","city":"{city}","id":"{id}","lastName":"{lastName}","pets":[{"birthDate":"{birthDate}","id":"{id}","name":"{name}"}],"telephone":"{telephone}"} | Expected responses: 200 201 401 403 404  | Valid/nonValid combination: 
+ V V V V V V V V V | Priority: 0.0
+- http://host.docker.internal:9090/api/owners/*/lastname/{lastName} | Method:GET | #Ic: 1 | Body: null | Expected responses: 200 401 403 404  | Valid/nonValid combination: 
+ V | Priority: 0.0
+- http://host.docker.internal:9090/api/owners/{ownerId} | Method:GET | #Ic: 1 | Body: null | Expected responses: 200 401 403 404  | Valid/nonValid combination: 
+ V | Priority: 0.0
+- http://host.docker.internal:9090/api/owners/{ownerId} | Method:PUT | #Ic: 10 | Body: {"address":"{address}","city":"{city}","firstName":"{firstName}","lastName":"{lastName}","pets":[{"birthDate":"{birthDate}","id":"{id}","name":"{name}"}],"telephone":"{telephone}"} | Expected responses: 200 201 401 403 404  | Valid/nonValid combination: 
+ V V V V V V V V V V | Priority: 0.0
+- http://host.docker.internal:9090/api/owners/{ownerId} | Method:DELETE | #Ic: 1 | Body: null | Expected responses: 200 204 401 403  | Valid/nonValid combination: 
+ V | Priority: 0.0
+- http://host.docker.internal:9090/api/pets | Method:GET | #Ic: 0 | Body: null | Expected responses: 200 401 403 404  | Valid/nonValid combination: 
+ | Priority: 0.0
+- http://host.docker.internal:9090/api/pets/pettypes | Method:GET | #Ic: 0 | Body: null | Expected responses: 200 401 403 404  | Valid/nonValid combination: 
+ | Priority: 0.0
+- http://host.docker.internal:9090/api/pets/{petId} | Method:GET | #Ic: 1 | Body: null | Expected responses: 200 401 403 404  | Valid/nonValid combination: 
+ V | Priority: 0.0
+- http://host.docker.internal:9090/api/pets/{petId} | Method:PUT | #Ic: 15 | Body: {"id":"{id}","name":"{name}","owner":{"address":"{address}","city":"{city}","firstName":"{firstName}","id":"{id}","lastName":"{lastName}","telephone":"{telephone}","name":"{name}"},"pets":[{"date":"{date}","description":"{description}","id":"{id}"}]} | Expected responses: 200 201 401 403 404  | Valid/nonValid combination: 
+ V V V V V V V V V V V V V V V | Priority: 0.0
+- http://host.docker.internal:9090/api/pets/{petId} | Method:DELETE | #Ic: 1 | Body: null | Expected responses: 200 204 401 403  | Valid/nonValid combination: 
+ V | Priority: 0.0
+- http://host.docker.internal:9090/api/pettypes | Method:GET | #Ic: 0 | Body: null | Expected responses: 200 401 403 404  | Valid/nonValid combination: 
+ | Priority: 0.0
+- http://host.docker.internal:9090/api/pettypes | Method:POST | #Ic: 2 | Body: {"name":"{name}"} | Expected responses: 200 201 401 403 404  | Valid/nonValid combination: 
+ V V | Priority: 0.0
+- http://host.docker.internal:9090/api/pettypes/{petTypeId} | Method:GET | #Ic: 1 | Body: null | Expected responses: 200 401 403 404  | Valid/nonValid combination: 
+ V | Priority: 0.0
+- http://host.docker.internal:9090/api/pettypes/{petTypeId} | Method:PUT | #Ic: 3 | Body: {"name":"{name}"} | Expected responses: 200 201 401 403 404  | Valid/nonValid combination: 
+ V V V | Priority: 0.0
+- http://host.docker.internal:9090/api/pettypes/{petTypeId} | Method:DELETE | #Ic: 1 | Body: null | Expected responses: 200 204 401 403  | Valid/nonValid combination: 
+ V | Priority: 0.0
+- http://host.docker.internal:9090/api/specialties | Method:GET | #Ic: 0 | Body: null | Expected responses: 200 401 403 404  | Valid/nonValid combination: 
+ | Priority: 0.0
+- http://host.docker.internal:9090/api/specialties | Method:POST | #Ic: 2 | Body: {"name":"{name}"} | Expected responses: 200 201 401 403 404  | Valid/nonValid combination: 
+ V V | Priority: 0.0
+- http://host.docker.internal:9090/api/specialties/{specialtyId} | Method:GET | #Ic: 1 | Body: null | Expected responses: 200 401 403 404  | Valid/nonValid combination: 
+ V | Priority: 0.0
+- http://host.docker.internal:9090/api/specialties/{specialtyId} | Method:PUT | #Ic: 3 | Body: {"name":"{name}"} | Expected responses: 200 201 401 403 404  | Valid/nonValid combination: 
+ V V V | Priority: 0.0
+- http://host.docker.internal:9090/api/specialties/{specialtyId} | Method:DELETE | #Ic: 1 | Body: null | Expected responses: 200 204 401 403  | Valid/nonValid combination: 
+ V | Priority: 0.0
+- http://host.docker.internal:9090/api/users | Method:POST | #Ic: 5 | Body: {"enabled" : "{enabled}", "password" : "{password}", "roles" : [{"id" : "{id}", "name" : "{name}"}], "username" : "{username}"} | Expected responses: 200 201 401 403 404  | Valid/nonValid combination: 
+ V V V V V | Priority: 0.0
+- http://host.docker.internal:9090/api/vets | Method:GET | #Ic: 0 | Body: null | Expected responses: 200 401 403 404  | Valid/nonValid combination: 
+ | Priority: 0.0
+- http://host.docker.internal:9090/api/vets | Method:POST | #Ic: 5 | Body: {"firstName":"{firstName}","lastName":"{lastName}","specialties":[{"id":"{id}","name":"{name}"}]} | Expected responses: 200 201 401 403 404  | Valid/nonValid combination: 
+ V V V V V | Priority: 0.0
+- http://host.docker.internal:9090/api/vets/{vetId} | Method:GET | #Ic: 1 | Body: null | Expected responses: 200 401 403 404  | Valid/nonValid combination: 
+ V | Priority: 0.0
+- http://host.docker.internal:9090/api/vets/{vetId} | Method:PUT | #Ic: 6 | Body: {"id":"{id}","lastName":"{lastName}","specialties":[{"id":"{id}","name":"{name}"}]} | Expected responses: 200 201 401 403 404  | Valid/nonValid combination: 
+ V V V V V V | Priority: 0.0
+- http://host.docker.internal:9090/api/vets/{vetId} | Method:DELETE | #Ic: 1 | Body: null | Expected responses: 200 204 401 403  | Valid/nonValid combination: 
+ V | Priority: 0.0
+- http://host.docker.internal:9090/api/visits | Method:GET | #Ic: 0 | Body: null | Expected responses: 200 401 403 404  | Valid/nonValid combination: 
+ | Priority: 0.0
+- http://host.docker.internal:9090/api/visits/{visitId} | Method:GET | #Ic: 1 | Body: null | Expected responses: 200 401 403 404  | Valid/nonValid combination: 
+ V | Priority: 0.0
+- http://host.docker.internal:9090/api/visits/{visitId} | Method:PUT | #Ic: 7 | Body: {"date":"{date}","id":"{id}","pet":{"birthDate":"{birthDate}","id":"{id}","name":"{name}"}} | Expected responses: 200 201 401 403 404  | Valid/nonValid combination: 
+ V V V V V V V | Priority: 0.0
+- http://host.docker.internal:9090/api/visits/{visitId} | Method:DELETE | #Ic: 1 | Body: null | Expected responses: 200 204 401 403  | Valid/nonValid combination: 
+ V | Priority: 0.0
+- http://host.docker.internal:9090/error | Method:GET | #Ic: 0 | Body: null | Expected responses: 200 401 403 404  | Valid/nonValid combination: 
+ | Priority: 0.0
+- http://host.docker.internal:9090/error | Method:PUT | #Ic: 0 | Body: null | Expected responses: 200 201 401 403 404  | Valid/nonValid combination: 
+ | Priority: 0.0
+- http://host.docker.internal:9090/error | Method:POST | #Ic: 0 | Body: null | Expected responses: 200 201 401 403 404  | Valid/nonValid combination: 
+ | Priority: 0.0
+- http://host.docker.internal:9090/error | Method:DELETE | #Ic: 0 | Body: null | Expected responses: 200 204 401 403  | Valid/nonValid combination: 
+ | Priority: 0.0
+- http://host.docker.internal:9090/error | Method:PATCH | #Ic: 0 | Body: null | Expected responses: 200 204 401 403  | Valid/nonValid combination: 
+ | Priority: 0.0
+- http://host.docker.internal:9090/error | Method:HEAD | #Ic: 0 | Body: null | Expected responses: 200 204 401 403  | Valid/nonValid combination: 
+ | Priority: 0.0
+- http://host.docker.internal:9090/error | Method:OPTIONS | #Ic: 0 | Body: null | Expected responses: 200 204 401 403  | Valid/nonValid combination: 
+ | Priority: 0.0

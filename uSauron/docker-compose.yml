@@ -1,0 +1,10 @@
+version: '3'
+services:
+    uproxy:
+        container_name: usauron
+        build:
+            context: .
+            dockerfile: Dockerfile
+        image: usauron:latest
+        ports:
+        - 11112:11112

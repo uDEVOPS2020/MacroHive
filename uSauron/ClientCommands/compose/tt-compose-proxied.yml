@@ -1,0 +1,840 @@
+version: '3'
+services:
+  ts-rebook-mongo:
+    image: mongo
+    networks:
+    - my-network
+  ts-basic-service:
+    image: uproxy:latest
+    container_name: ts-basic-service
+    ports:
+    - 15680:15680
+    networks:
+    - my-network
+    command: ["java","-Dserver.port=15680","-jar","/uproxy.jar", "ts-basic-service",
+      "host.docker.internal", "20016"]
+  ts-security-service-proxied:
+    image: codewisdom/ts-security-service:0.0.4
+    restart: always
+    ports:
+    - 20020:20020
+    networks:
+    - my-network
+    command: ["java", "-Dserver.port=20020", "-Xmx200m",  "-jar", "/app/ts-security-service-1.0.jar"]
+  ts-train-service:
+    image: uproxy:latest
+    container_name: ts-train-service
+    ports:
+    - 14567:14567
+    networks:
+    - my-network
+    command: ["java","-Dserver.port=14567","-jar","/uproxy.jar", "ts-train-service",
+      "host.docker.internal", "20011"]
+  ts-route-service-proxied:
+    image: codewisdom/ts-route-service:0.0.4
+    restart: always
+    ports:
+    - 20005:20005
+    networks:
+    - my-network
+    command: ["java", "-Dserver.port=20005", "-Xmx200m",  "-jar", "/app/ts-route-service-1.0.jar"]
+  ts-food-map-service-proxied:
+    image: codewisdom/ts-food-map-service:0.0.4
+    restart: always
+    ports:
+    - 20031:20031
+    networks:
+    - my-network
+    command: ["java", "-Dserver.port=20031", "-Xmx200m",  "-jar", "/app/ts-food-map-service-1.0.jar"]
+  ts-food-mongo:
+    image: mongo
+    networks:
+    - my-network
+  ts-security-mongo:
+    image: mongo
+    networks:
+    - my-network
+  redis:
+    image: uproxy:latest
+    container_name: redis
+    ports:
+    - 6379:6379
+    networks:
+    - my-network
+    command: ["java","-Dserver.port=6379","-jar","/uproxy.jar", "redis", "host.docker.internal",
+      "20000"]
+  ts-security-service:
+    image: uproxy:latest
+    container_name: ts-security-service
+    ports:
+    - 11188:11188
+    networks:
+    - my-network
+    command: ["java","-Dserver.port=11188","-jar","/uproxy.jar", "ts-security-service",
+      "host.docker.internal", "20020"]
+  ts-user-service:
+    image: uproxy:latest
+    container_name: ts-user-service
+    ports:
+    - 12342:12342
+    networks:
+    - my-network
+    command: ["java","-Dserver.port=12342","-jar","/uproxy.jar", "ts-user-service",
+      "host.docker.internal", "20003"]
+  ts-price-service-proxied:
+    image: codewisdom/ts-price-service:0.0.4
+    restart: always
+    ports:
+    - 20018:20018
+    networks:
+    - my-network
+    command: ["java", "-Dserver.port=20018", "-Xmx200m",  "-jar", "/app/ts-price-service-1.0.jar"]
+  ts-preserve-service-proxied:
+    image: codewisdom/ts-preserve-service:0.0.4
+    restart: always
+    ports:
+    - 20014:20014
+    networks:
+    - my-network
+    command: ["java", "-Dserver.port=20014", "-Xmx200m",  "-jar", "/app/ts-preserve-service-1.0.jar"]
+  ts-food-map-mongo:
+    image: mongo
+    networks:
+    - my-network
+  ts-ticketinfo-service:
+    image: uproxy:latest
+    container_name: ts-ticketinfo-service
+    ports:
+    - 15681:15681
+    networks:
+    - my-network
+    command: ["java","-Dserver.port=15681","-jar","/uproxy.jar", "ts-ticketinfo-service",
+      "host.docker.internal", "20017"]
+  ts-news-service:
+    image: uproxy:latest
+    container_name: ts-news-service
+    ports:
+    - 12862:12862
+    networks:
+    - my-network
+    command: ["java","-Dserver.port=12862","-jar","/uproxy.jar", "ts-news-service",
+      "host.docker.internal", "20029"]
+  ts-consign-service:
+    image: uproxy:latest
+    container_name: ts-consign-service
+    ports:
+    - 16111:16111
+    networks:
+    - my-network
+    command: ["java","-Dserver.port=16111","-jar","/uproxy.jar", "ts-consign-service",
+      "host.docker.internal", "20034"]
+  ts-account-mongo:
+    image: mongo
+    networks:
+    - my-network
+  ts-payment-mongo:
+    image: mongo
+    networks:
+    - my-network
+  ts-consign-mongo:
+    image: mongo
+    networks:
+    - my-network
+  ts-preserve-other-service-proxied:
+    image: codewisdom/ts-preserve-other-service:0.0.4
+    restart: always
+    ports:
+    - 20015:20015
+    networks:
+    - my-network
+    command: ["java", "-Dserver.port=20015", "-Xmx200m",  "-jar", "/app/ts-preserve-other-service-1.0.jar"]
+  ts-food-service-proxied:
+    image: codewisdom/ts-food-service:0.0.4
+    restart: always
+    ports:
+    - 20033:20033
+    networks:
+    - my-network
+    command: ["java", "-Dserver.port=20033", "-Xmx200m",  "-jar", "/app/ts-food-service-1.0.jar"]
+  ts-verification-code-service:
+    image: uproxy:latest
+    container_name: ts-verification-code-service
+    ports:
+    - 15678:15678
+    networks:
+    - my-network
+    command: ["java","-Dserver.port=15678","-jar","/uproxy.jar", "ts-verification-code-service",
+      "host.docker.internal", "20004"]
+  ts-inside-payment-mongo:
+    image: mongo
+    networks:
+    - my-network
+  ts-admin-user-service:
+    image: uproxy:latest
+    container_name: ts-admin-user-service
+    ports:
+    - 16115:16115
+    networks:
+    - my-network
+    command: ["java","-Dserver.port=16115","-jar","/uproxy.jar", "ts-admin-user-service",
+      "host.docker.internal", "20040"]
+  ts-train-service-proxied:
+    image: codewisdom/ts-train-service:0.0.4
+    restart: always
+    ports:
+    - 20011:20011
+    networks:
+    - my-network
+    command: ["java", "-Dserver.port=20011", "-Xmx200m",  "-jar", "/app/ts-train-service-1.0.jar"]
+  ts-price-service:
+    image: uproxy:latest
+    container_name: ts-price-service
+    ports:
+    - 16579:16579
+    networks:
+    - my-network
+    command: ["java","-Dserver.port=16579","-jar","/uproxy.jar", "ts-price-service",
+      "host.docker.internal", "20018"]
+  ts-travel-service:
+    image: uproxy:latest
+    container_name: ts-travel-service
+    ports:
+    - 12346:12346
+    networks:
+    - my-network
+    command: ["java","-Dserver.port=12346","-jar","/uproxy.jar", "ts-travel-service",
+      "host.docker.internal", "20012"]
+  ts-route-mongo:
+    image: mongo
+    networks:
+    - my-network
+  ts-basic-service-proxied:
+    image: codewisdom/ts-basic-service:0.0.4
+    restart: always
+    ports:
+    - 20016:20016
+    networks:
+    - my-network
+    command: ["java", "-Dserver.port=20016", "-Xmx200m",  "-jar", "/app/ts-basic-service-1.0.jar"]
+  ts-execute-service-proxied:
+    image: codewisdom/ts-execute-service:0.0.4
+    restart: always
+    ports:
+    - 20022:20022
+    networks:
+    - my-network
+    command: ["java", "-Dserver.port=20022", "-Xmx200m",  "-jar", "/app/ts-execute-service-1.0.jar"]
+  ts-contacts-mongo:
+    image: mongo
+    networks:
+    - my-network
+  ts-admin-travel-service:
+    image: uproxy:latest
+    container_name: ts-admin-travel-service
+    ports:
+    - 16114:16114
+    networks:
+    - my-network
+    command: ["java","-Dserver.port=16114","-jar","/uproxy.jar", "ts-admin-travel-service",
+      "host.docker.internal", "20039"]
+  ts-admin-route-service:
+    image: uproxy:latest
+    container_name: ts-admin-route-service
+    ports:
+    - 16113:16113
+    networks:
+    - my-network
+    command: ["java","-Dserver.port=16113","-jar","/uproxy.jar", "ts-admin-route-service",
+      "host.docker.internal", "20038"]
+  ts-ticket-office-service:
+    image: codewisdom/ts-ticket-office-service:0.0.4
+    restart: always
+    command: [npm, start]
+    ports:
+    - 16108:16108
+    networks:
+    - my-network
+  ts-order-other-service-proxied:
+    image: codewisdom/ts-order-other-service:0.0.4
+    restart: always
+    ports:
+    - 20008:20008
+    networks:
+    - my-network
+    command: ["java", "-Dserver.port=20008", "-Xmx200m",  "-jar", "/app/ts-order-other-service-1.0.jar"]
+  ts-news-service-proxied:
+    image: codewisdom/ts-news-service:0.0.4
+    restart: always
+    ports:
+    - 20029:20029
+    networks:
+    - my-network
+    command: ["java", "-Dserver.port=20029", "-Xmx200m",  "-jar", "/app/ts-news-service-1.0.jar"]
+  ts-route-plan-service:
+    image: uproxy:latest
+    container_name: ts-route-plan-service
+    ports:
+    - 14578:14578
+    networks:
+    - my-network
+    command: ["java","-Dserver.port=14578","-jar","/uproxy.jar", "ts-route-plan-service",
+      "host.docker.internal", "20032"]
+  ts-order-service:
+    image: uproxy:latest
+    container_name: ts-order-service
+    ports:
+    - 12031:12031
+    networks:
+    - my-network
+    command: ["java","-Dserver.port=12031","-jar","/uproxy.jar", "ts-order-service",
+      "host.docker.internal", "20007"]
+  ts-consign-service-proxied:
+    image: codewisdom/ts-consign-service:0.0.4
+    restart: always
+    ports:
+    - 20034:20034
+    networks:
+    - my-network
+    command: ["java", "-Dserver.port=20034", "-Xmx200m",  "-jar", "/app/ts-consign-service-1.0.jar"]
+  ts-payment-service-proxied:
+    image: codewisdom/ts-payment-service:0.0.4
+    restart: always
+    ports:
+    - 20023:20023
+    networks:
+    - my-network
+    command: ["java", "-Dserver.port=20023", "-Xmx200m",  "-jar", "/app/ts-payment-service-1.0.jar"]
+  ts-voucher-service:
+    image: uproxy:latest
+    container_name: ts-voucher-service
+    ports:
+    - 16101:16101
+    networks:
+    - my-network
+    command: ["java","-Dserver.port=16101","-jar","/uproxy.jar", "ts-voucher-service",
+      "host.docker.internal", "20030"]
+  ts-admin-order-service-proxied:
+    image: codewisdom/ts-admin-order-service:0.0.4
+    restart: always
+    ports:
+    - 20037:20037
+    networks:
+    - my-network
+    command: ["java", "-Dserver.port=20037", "-Xmx200m",  "-jar", "/app/ts-admin-order-service-1.0.jar"]
+  ts-rebook-service:
+    image: uproxy:latest
+    container_name: ts-rebook-service
+    ports:
+    - 18886:18886
+    networks:
+    - my-network
+    command: ["java","-Dserver.port=18886","-jar","/uproxy.jar", "ts-rebook-service",
+      "host.docker.internal", "20024"]
+  ts-travel-plan-service:
+    image: uproxy:latest
+    container_name: ts-travel-plan-service
+    ports:
+    - 14322:14322
+    networks:
+    - my-network
+    command: ["java","-Dserver.port=14322","-jar","/uproxy.jar", "ts-travel-plan-service",
+      "host.docker.internal", "20028"]
+  ts-ui-dashboard-proxied:
+    image: codewisdom/ts-ui-dashboard:0.0.4
+    restart: always
+    ports:
+    - 20001:20001
+    networks:
+    - my-network
+    command: ["java", "-Dserver.port=20001", "-Xmx200m",  "-jar", "/app/ts-ui-dashboard-1.0.jar"]
+  ts-price-mongo:
+    image: mongo
+    networks:
+    - my-network
+  ts-station-service-proxied:
+    image: codewisdom/ts-station-service:0.0.4
+    restart: always
+    ports:
+    - 20010:20010
+    networks:
+    - my-network
+    command: ["java", "-Dserver.port=20010", "-Xmx200m",  "-jar", "/app/ts-station-service-1.0.jar"]
+  ts-inside-payment-service:
+    image: uproxy:latest
+    container_name: ts-inside-payment-service
+    ports:
+    - 18673:18673
+    networks:
+    - my-network
+    command: ["java","-Dserver.port=18673","-jar","/uproxy.jar", "ts-inside-payment-service",
+      "host.docker.internal", "20021"]
+  ts-inside-payment-service-proxied:
+    image: codewisdom/ts-inside-payment-service:0.0.4
+    restart: always
+    ports:
+    - 20021:20021
+    networks:
+    - my-network
+    command: ["java", "-Dserver.port=20021", "-Xmx200m",  "-jar", "/app/ts-inside-payment-service-1.0.jar"]
+  ts-voucher-service-proxied:
+    image: codewisdom/ts-voucher-service:0.0.4
+    restart: always
+    ports:
+    - 20030:20030
+    depends_on:
+    - ts-voucher-mysql
+    volumes:
+    - /var/lib/mysql
+    networks:
+    - my-network
+    command: ["java", "-Dserver.port=20030", "-Xmx200m",  "-jar", "/app/ts-voucher-service-1.0.jar"]
+  ts-consign-price-mongo:
+    image: mongo
+    networks:
+    - my-network
+  ts-user-service-proxied:
+    image: codewisdom/ts-user-service:0.0.4
+    restart: always
+    ports:
+    - 20003:20003
+    networks:
+    - my-network
+    command: ["java", "-Dserver.port=20003", "-Xmx200m",  "-jar", "/app/ts-user-service-1.0.jar"]
+  ts-cancel-service:
+    image: uproxy:latest
+    container_name: ts-cancel-service
+    ports:
+    - 18885:18885
+    networks:
+    - my-network
+    command: ["java","-Dserver.port=18885","-jar","/uproxy.jar", "ts-cancel-service",
+      "host.docker.internal", "20025"]
+  ts-user-mongo:
+    image: mongo
+    networks:
+    - my-network
+  ts-food-map-service:
+    image: uproxy:latest
+    container_name: ts-food-map-service
+    ports:
+    - 18855:18855
+    networks:
+    - my-network
+    command: ["java","-Dserver.port=18855","-jar","/uproxy.jar", "ts-food-map-service",
+      "host.docker.internal", "20031"]
+  ts-news-mongo:
+    image: mongo
+    networks:
+    - my-network
+  ts-admin-route-service-proxied:
+    image: codewisdom/ts-admin-route-service:0.0.4
+    restart: always
+    ports:
+    - 20038:20038
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+    networks:
+    - my-network
+    command: ["java", "-Dserver.port=20038", "-Xmx200m",  "-jar", "/app/ts-admin-route-service-1.0.jar"]
+  ts-execute-service:
+    image: uproxy:latest
+    container_name: ts-execute-service
+    ports:
+    - 12386:12386
+    networks:
+    - my-network
+    command: ["java","-Dserver.port=12386","-jar","/uproxy.jar", "ts-execute-service",
+      "host.docker.internal", "20022"]
+  ts-auth-mongo:
+    image: mongo
+    networks:
+    - my-network
+  ts-preserve-other-service:
+    image: uproxy:latest
+    container_name: ts-preserve-other-service
+    ports:
+    - 14569:14569
+    networks:
+    - my-network
+    command: ["java","-Dserver.port=14569","-jar","/uproxy.jar", "ts-preserve-other-service",
+      "host.docker.internal", "20015"]
+  ts-ticket-office-mongo:
+    image: mongo
+    networks:
+    - my-network
+  ts-admin-basic-info-service-proxied:
+    image: codewisdom/ts-admin-basic-info-service:0.0.4
+    restart: always
+    ports:
+    - 20036:20036
+    networks:
+    - my-network
+    command: ["java", "-Dserver.port=20036", "-Xmx200m",  "-jar", "/app/ts-admin-basic-info-service-1.0.jar"]
+  ts-consign-price-service-proxied:
+    image: codewisdom/ts-consign-price-service:0.0.4
+    restart: always
+    ports:
+    - 20035:20035
+    networks:
+    - my-network
+    command: ["java", "-Dserver.port=20035", "-Xmx200m",  "-jar", "/app/ts-consign-price-service-1.0.jar"]
+  ts-config-service:
+    image: uproxy:latest
+    container_name: ts-config-service
+    ports:
+    - 15679:15679
+    networks:
+    - my-network
+    command: ["java","-Dserver.port=15679","-jar","/uproxy.jar", "ts-config-service",
+      "host.docker.internal", "20009"]
+  ts-travel-service-proxied:
+    image: codewisdom/ts-travel-service:0.0.4
+    restart: always
+    ports:
+    - 20012:20012
+    networks:
+    - my-network
+    command: ["java", "-Dserver.port=20012", "-Xmx200m",  "-jar", "/app/ts-travel-service-1.0.jar"]
+  ts-contacts-service:
+    image: uproxy:latest
+    container_name: ts-contacts-service
+    ports:
+    - 12347:12347
+    networks:
+    - my-network
+    command: ["java","-Dserver.port=12347","-jar","/uproxy.jar", "ts-contacts-service",
+      "host.docker.internal", "20006"]
+  ts-food-service:
+    image: uproxy:latest
+    container_name: ts-food-service
+    ports:
+    - 18856:18856
+    networks:
+    - my-network
+    command: ["java","-Dserver.port=18856","-jar","/uproxy.jar", "ts-food-service",
+      "host.docker.internal", "20033"]
+  ts-order-other-mongo:
+    image: mongo
+    networks:
+    - my-network
+  ts-config-service-proxied:
+    image: codewisdom/ts-config-service:0.0.4
+    restart: always
+    ports:
+    - 20009:20009
+    networks:
+    - my-network
+    command: ["java", "-Dserver.port=20009", "-Xmx200m",  "-jar", "/app/ts-config-service-1.0.jar"]
+  ts-ui-dashboard:
+    image: uproxy:latest
+    container_name: ts-ui-dashboard
+    ports:
+    - 8080:8080
+    networks:
+    - my-network
+    command: ["java","-Dserver.port=8080","-jar","/uproxy.jar", "ts-ui-dashboard",
+      "host.docker.internal", "20001"]
+  ts-admin-order-service:
+    image: uproxy:latest
+    container_name: ts-admin-order-service
+    ports:
+    - 16112:16112
+    networks:
+    - my-network
+    command: ["java","-Dserver.port=16112","-jar","/uproxy.jar", "ts-admin-order-service",
+      "host.docker.internal", "20037"]
+  ts-seat-service:
+    image: uproxy:latest
+    container_name: ts-seat-service
+    ports:
+    - 18898:18898
+    networks:
+    - my-network
+    command: ["java","-Dserver.port=18898","-jar","/uproxy.jar", "ts-seat-service",
+      "host.docker.internal", "20027"]
+  ts-admin-travel-service-proxied:
+    image: codewisdom/ts-admin-travel-service:0.0.4
+    restart: always
+    ports:
+    - 20039:20039
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+    networks:
+    - my-network
+    command: ["java", "-Dserver.port=20039", "-Xmx200m",  "-jar", "/app/ts-admin-travel-service-1.0.jar"]
+  ts-train-mongo:
+    image: mongo
+    networks:
+    - my-network
+  ts-admin-user-service-proxied:
+    image: codewisdom/ts-admin-user-service:0.0.4
+    restart: always
+    ports:
+    - 20040:20040
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+    networks:
+    - my-network
+    command: ["java", "-Dserver.port=20040", "-Xmx200m",  "-jar", "/app/ts-admin-user-service-1.0.jar"]
+  ts-seat-service-proxied:
+    image: codewisdom/ts-seat-service:0.0.4
+    restart: always
+    ports:
+    - 20027:20027
+    networks:
+    - my-network
+    command: ["java", "-Dserver.port=20027", "-Xmx200m",  "-jar", "/app/ts-seat-service-1.0.jar"]
+  ts-station-mongo:
+    image: mongo
+    networks:
+    - my-network
+  ts-auth-service-proxied:
+    image: codewisdom/ts-auth-service:0.0.4
+    restart: always
+    ports:
+    - 20002:20002
+    networks:
+    - my-network
+    command: ["java", "-Dserver.port=20002", "-Xmx200m",  "-jar", "/app/ts-auth-service-1.0.jar"]
+  ts-travel2-service:
+    image: uproxy:latest
+    container_name: ts-travel2-service
+    ports:
+    - 16346:16346
+    networks:
+    - my-network
+    command: ["java","-Dserver.port=16346","-jar","/uproxy.jar", "ts-travel2-service",
+      "host.docker.internal", "20013"]
+  ts-assurance-service:
+    image: uproxy:latest
+    container_name: ts-assurance-service
+    ports:
+    - 18888:18888
+    networks:
+    - my-network
+    command: ["java","-Dserver.port=18888","-jar","/uproxy.jar", "ts-assurance-service",
+      "host.docker.internal", "20026"]
+  ts-auth-service:
+    image: uproxy:latest
+    container_name: ts-auth-service
+    ports:
+    - 12340:12340
+    networks:
+    - my-network
+    command: ["java","-Dserver.port=12340","-jar","/uproxy.jar", "ts-auth-service",
+      "host.docker.internal", "20002"]
+  ts-route-service:
+    image: uproxy:latest
+    container_name: ts-route-service
+    ports:
+    - 11178:11178
+    networks:
+    - my-network
+    command: ["java","-Dserver.port=11178","-jar","/uproxy.jar", "ts-route-service",
+      "host.docker.internal", "20005"]
+  ts-admin-basic-info-service:
+    image: uproxy:latest
+    container_name: ts-admin-basic-info-service
+    ports:
+    - 18767:18767
+    networks:
+    - my-network
+    command: ["java","-Dserver.port=18767","-jar","/uproxy.jar", "ts-admin-basic-info-service",
+      "host.docker.internal", "20036"]
+  ts-travel-mongo:
+    image: mongo
+    networks:
+    - my-network
+  ts-cancel-service-proxied:
+    image: codewisdom/ts-cancel-service:0.0.4
+    restart: always
+    ports:
+    - 20025:20025
+    networks:
+    - my-network
+    command: ["java", "-Dserver.port=20025", "-Xmx200m",  "-jar", "/app/ts-cancel-service-1.0.jar"]
+  ts-travel-plan-service-proxied:
+    image: codewisdom/ts-travel-plan-service:0.0.4
+    restart: always
+    ports:
+    - 20028:20028
+    networks:
+    - my-network
+    command: ["java", "-Dserver.port=20028", "-Xmx200m",  "-jar", "/app/ts-travel-plan-service-1.0.jar"]
+  ts-verification-code-service-proxied:
+    image: codewisdom/ts-verification-code-service:0.0.4
+    restart: always
+    ports:
+    - 20004:20004
+    networks:
+    - my-network
+    command: ["java", "-Dserver.port=20004", "-Xmx200m",  "-jar", "/app/ts-verification-code-service-1.0.jar"]
+  ts-contacts-service-proxied:
+    image: codewisdom/ts-contacts-service:0.0.4
+    restart: always
+    ports:
+    - 20006:20006
+    networks:
+    - my-network
+    command: ["java", "-Dserver.port=20006", "-Xmx200m",  "-jar", "/app/ts-contacts-service-1.0.jar"]
+  ts-notification-service-proxied:
+    image: codewisdom/ts-notification-service:0.0.4
+    restart: always
+    ports:
+    - 20019:20019
+    networks:
+    - my-network
+    command: ["java", "-Dserver.port=20019", "-Xmx200m",  "-jar", "/app/ts-notification-service-1.0.jar"]
+  ts-assurance-service-proxied:
+    image: codewisdom/ts-assurance-service:0.0.4
+    restart: always
+    ports:
+    - 20026:20026
+    networks:
+    - my-network
+    command: ["java", "-Dserver.port=20026", "-Xmx200m",  "-jar", "/app/ts-assurance-service-1.0.jar"]
+  ts-ticketinfo-service-proxied:
+    image: codewisdom/ts-ticketinfo-service:0.0.4
+    restart: always
+    ports:
+    - 20017:20017
+    networks:
+    - my-network
+    command: ["java", "-Dserver.port=20017", "-Xmx200m",  "-jar", "/app/ts-ticketinfo-service-1.0.jar"]
+  ts-avatar-service:
+    image: codewisdom/ts-avatar-service:0.0.4
+    restart: always
+    command: [gunicorn, -w, 4, -b, 0.0.0.0:17001, app:app]
+    ports:
+    - 17001:17001
+    networks:
+    - my-network
+  ts-rebook-service-proxied:
+    image: codewisdom/ts-rebook-service:0.0.4
+    restart: always
+    ports:
+    - 20024:20024
+    networks:
+    - my-network
+    command: ["java", "-Dserver.port=20024", "-Xmx200m",  "-jar", "/app/ts-rebook-service-1.0.jar"]
+  ts-preserve-service:
+    image: uproxy:latest
+    container_name: ts-preserve-service
+    ports:
+    - 14568:14568
+    networks:
+    - my-network
+    command: ["java","-Dserver.port=14568","-jar","/uproxy.jar", "ts-preserve-service",
+      "host.docker.internal", "20014"]
+  ts-assurance-mongo:
+    image: mongo
+    networks:
+    - my-network
+  ts-voucher-mysql:
+    image: mysql
+    command:
+    - python
+    - server.py
+    expose:
+    - '3306'
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    networks:
+    - my-network
+  ts-order-other-service:
+    image: uproxy:latest
+    container_name: ts-order-other-service
+    ports:
+    - 12032:12032
+    networks:
+    - my-network
+    command: ["java","-Dserver.port=12032","-jar","/uproxy.jar", "ts-order-other-service",
+      "host.docker.internal", "20008"]
+  ts-travel2-service-proxied:
+    image: codewisdom/ts-travel2-service:0.0.4
+    restart: always
+    ports:
+    - 20013:20013
+    networks:
+    - my-network
+    command: ["java", "-Dserver.port=20013", "-Xmx200m",  "-jar", "/app/ts-travel2-service-1.0.jar"]
+  redis-proxied:
+    image: redis
+    ports:
+    - 20000:20000
+    networks:
+    - my-network
+    command: ["java", "-Dserver.port=20000", "-Xmx200m",  "-jar", "/app/redis-1.0.jar"]
+  ts-travel2-mongo:
+    image: mongo
+    networks:
+    - my-network
+  ts-station-service:
+    image: uproxy:latest
+    container_name: ts-station-service
+    ports:
+    - 12345:12345
+    networks:
+    - my-network
+    command: ["java","-Dserver.port=12345","-jar","/uproxy.jar", "ts-station-service",
+      "host.docker.internal", "20010"]
+  ts-payment-service:
+    image: uproxy:latest
+    container_name: ts-payment-service
+    ports:
+    - 19001:19001
+    networks:
+    - my-network
+    command: ["java","-Dserver.port=19001","-jar","/uproxy.jar", "ts-payment-service",
+      "host.docker.internal", "20023"]
+  ts-order-service-proxied:
+    image: codewisdom/ts-order-service:0.0.4
+    restart: always
+    ports:
+    - 20007:20007
+    networks:
+    - my-network
+    command: ["java", "-Dserver.port=20007", "-Xmx200m",  "-jar", "/app/ts-order-service-1.0.jar"]
+  ts-notification-service:
+    image: uproxy:latest
+    container_name: ts-notification-service
+    ports:
+    - 17853:17853
+    networks:
+    - my-network
+    command: ["java","-Dserver.port=17853","-jar","/uproxy.jar", "ts-notification-service",
+      "host.docker.internal", "20019"]
+  ts-order-mongo:
+    image: mongo
+    networks:
+    - my-network
+  ts-config-mongo:
+    image: mongo
+    networks:
+    - my-network
+  ts-route-plan-service-proxied:
+    image: codewisdom/ts-route-plan-service:0.0.4
+    restart: always
+    ports:
+    - 20032:20032
+    networks:
+    - my-network
+    command: ["java", "-Dserver.port=20032", "-Xmx200m",  "-jar", "/app/ts-route-plan-service-1.0.jar"]
+  ts-consign-price-service:
+    image: uproxy:latest
+    container_name: ts-consign-price-service
+    ports:
+    - 16110:16110
+    networks:
+    - my-network
+    command: ["java","-Dserver.port=16110","-jar","/uproxy.jar", "ts-consign-price-service",
+      "host.docker.internal", "20035"]
+networks:
+  my-network:
+    driver: bridge

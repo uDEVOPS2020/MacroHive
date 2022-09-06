@@ -1,0 +1,9 @@
+uSauron/dataStructure/InfoPacket.class
+uSauron/dataStructure/TestSession.class
+uSauron/dataStructure/UService.class
+uSauron/graph/Graph.class
+uSauron/controller/RequestController.class
+uSauron/builder/ComposeBuilder.class
+uSauron/graph/Vertex.class
+uSauron/collector/InfoCollector.class
+uSauron/main/USauronApplication.class

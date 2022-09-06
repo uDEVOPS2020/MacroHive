@@ -1,0 +1,8 @@
+version: '3'
+services:
+    uproxy:
+        container_name: uproxy
+        command: ["java","-Dserver.port=11110","-jar","/uproxy.jar", "test-proxy", "host.docker.internal","12345"]
+        image: uproxy:latest
+        ports:
+            - 11110:11110

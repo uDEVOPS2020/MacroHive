@@ -1,0 +1,279 @@
+
+----------------------------------------
+url: http://host.docker.internal:9090/
+Method: GET
+Expected Responses: 
+200 401 403 404 
+Returned Response: 404
+Response Time: 45 ms
+Priority: 0.0
+
+----------------------------------------
+url: http://host.docker.internal:9090/
+Method: PUT
+Expected Responses: 
+200 201 401 403 404 
+Returned Response: 404
+Response Time: 10 ms
+Priority: 0.0
+
+----------------------------------------
+url: http://host.docker.internal:9090/
+Method: POST
+Expected Responses: 
+200 201 401 403 404 
+Returned Response: 404
+Response Time: 11 ms
+Priority: 0.0
+
+----------------------------------------
+url: http://host.docker.internal:9090/api/owners
+Method: GET
+Expected Responses: 
+200 401 403 404 
+Returned Response: 404
+Response Time: 78 ms
+Priority: 0.0
+
+----------------------------------------
+url: http://host.docker.internal:9090/api/owners
+Method: POST
+Payload: {"address":"e","city":"7SylSR","id":767833233,"lastName":"aJkZq5DH66JmjI","pets":[{"birthDate":"2021-11-29T18:37:35","id":767833233,"name":"Pea2dKJJ3"}],"telephone":"Q"}Expected Responses: 
+200 201 401 403 404 
+Returned Response: 404
+Response Time: 16 ms
+Priority: 0.0
+
+----------------------------------------
+url: http://host.docker.internal:9090/api/owners/*/lastname/rYSK3VWxgMGuSyn
+Method: GET
+Expected Responses: 
+200 401 403 404 
+Returned Response: 404
+Response Time: 26 ms
+Priority: 0.0
+
+----------------------------------------
+url: http://host.docker.internal:9090/api/owners/1383310888
+Method: GET
+Expected Responses: 
+200 401 403 404 
+Returned Response: 404
+Response Time: 35 ms
+Priority: 0.0
+
+----------------------------------------
+url: http://host.docker.internal:9090/api/owners/
+Method: PUT
+Payload: {"address":"QqU9nIOZmtH4r","city":"Do9ptwqywzomq","firstName":"0Qrr3YeyWvGWoAjI","lastName":"PRgPyWx2WMXSHyY","pets":[{"birthDate":"2021-11-29T18:37:35","id":1667488495,"name":"0unW"}],"telephone":"Y85c"}Expected Responses: 
+200 201 401 403 404 
+Returned Response: 404
+Response Time: 14 ms
+Priority: 0.0
+
+----------------------------------------
+url: http://host.docker.internal:9090/api/pets
+Method: GET
+Expected Responses: 
+200 401 403 404 
+Returned Response: 404
+Response Time: 28 ms
+Priority: 0.0
+
+----------------------------------------
+url: http://host.docker.internal:9090/api/pets/pettypes
+Method: GET
+Expected Responses: 
+200 401 403 404 
+Returned Response: 404
+Response Time: 30 ms
+Priority: 0.0
+
+----------------------------------------
+url: http://host.docker.internal:9090/api/pets/437403364
+Method: GET
+Expected Responses: 
+200 401 403 404 
+Returned Response: 404
+Response Time: 34 ms
+Priority: 0.0
+
+----------------------------------------
+url: http://host.docker.internal:9090/api/pets/
+Method: PUT
+Payload: {"id":1757935363,"name":"K","owner":{"address":"lSTcl","city":"dhRiaWoxdm5c","firstName":"MSMGVCH4BSUimp23eCN","id":1757935363,"lastName":"RY","telephone":"","name":"K"},"pets":[{"date":"","description":"cWb","id":1757935363}]}Expected Responses: 
+200 201 401 403 404 
+Returned Response: 404
+Response Time: 16 ms
+Priority: 0.0
+
+----------------------------------------
+url: http://host.docker.internal:9090/api/pettypes
+Method: GET
+Expected Responses: 
+200 401 403 404 
+Returned Response: 404
+Response Time: 30 ms
+Priority: 0.0
+
+----------------------------------------
+url: http://host.docker.internal:9090/api/pettypes
+Method: POST
+Payload: {"name":"APNj0Vn"}Expected Responses: 
+200 201 401 403 404 
+Returned Response: 404
+Response Time: 16 ms
+Priority: 0.0
+
+----------------------------------------
+url: http://host.docker.internal:9090/api/pettypes/702639169
+Method: GET
+Expected Responses: 
+200 401 403 404 
+Returned Response: 404
+Response Time: 27 ms
+Priority: 0.0
+
+----------------------------------------
+url: http://host.docker.internal:9090/api/pettypes/694284141
+Method: PUT
+Payload: {"name":"iGgSXD"}Expected Responses: 
+200 201 401 403 404 
+Returned Response: 404
+Response Time: 14 ms
+Priority: 0.0
+
+----------------------------------------
+url: http://host.docker.internal:9090/api/specialties
+Method: GET
+Expected Responses: 
+200 401 403 404 
+Returned Response: 404
+Response Time: 31 ms
+Priority: 0.0
+
+----------------------------------------
+url: http://host.docker.internal:9090/api/specialties
+Method: POST
+Payload: {"name":"fOu6YMzys"}Expected Responses: 
+200 201 401 403 404 
+Returned Response: 404
+Response Time: 12 ms
+Priority: 0.0
+
+----------------------------------------
+url: http://host.docker.internal:9090/api/specialties/751992007
+Method: GET
+Expected Responses: 
+200 401 403 404 
+Returned Response: 404
+Response Time: 32 ms
+Priority: 0.0
+
+----------------------------------------
+url: http://host.docker.internal:9090/api/specialties/2026511231
+Method: PUT
+Payload: {"name":"SOGMyG"}Expected Responses: 
+200 201 401 403 404 
+Returned Response: 404
+Response Time: 10 ms
+Priority: 0.0
+
+----------------------------------------
+url: http://host.docker.internal:9090/api/users
+Method: POST
+Payload: {"enabled" : "true", "password" : "6pxljf9", "roles" : [{"id" : 1732367472, "name" : "cx8UAvDVv7JuQZ5"}], "username" : "cerKUUi9OydKgBOG4"}Expected Responses: 
+200 201 401 403 404 
+Returned Response: 404
+Response Time: 9 ms
+Priority: 0.0
+
+----------------------------------------
+url: http://host.docker.internal:9090/api/vets
+Method: GET
+Expected Responses: 
+200 401 403 404 
+Returned Response: 404
+Response Time: 25 ms
+Priority: 0.0
+
+----------------------------------------
+url: http://host.docker.internal:9090/api/vets
+Method: POST
+Payload: {"firstName":"Lw","lastName":"jbQhPCExStIEPuc","specialties":[{"id":1182861363,"name":"YMvL5N"}]}Expected Responses: 
+200 201 401 403 404 
+Returned Response: 404
+Response Time: 16 ms
+Priority: 0.0
+
+----------------------------------------
+url: http://host.docker.internal:9090/api/vets/651536659
+Method: GET
+Expected Responses: 
+200 401 403 404 
+Returned Response: 404
+Response Time: 26 ms
+Priority: 0.0
+
+----------------------------------------
+url: http://host.docker.internal:9090/api/vets/1239140414
+Method: PUT
+Payload: {"id":184847290,"lastName":"m2h0H","specialties":[{"id":184847290,"name":"5MAXM"}]}Expected Responses: 
+200 201 401 403 404 
+Returned Response: 404
+Response Time: 11 ms
+Priority: 0.0
+
+----------------------------------------
+url: http://host.docker.internal:9090/api/visits
+Method: GET
+Expected Responses: 
+200 401 403 404 
+Returned Response: 404
+Response Time: 34 ms
+Priority: 0.0
+
+----------------------------------------
+url: http://host.docker.internal:9090/api/visits/465148265
+Method: GET
+Expected Responses: 
+200 401 403 404 
+Returned Response: 404
+Response Time: 35 ms
+Priority: 0.0
+
+----------------------------------------
+url: http://host.docker.internal:9090/api/visits/360203459
+Method: PUT
+Payload: {"date":"4wYv2E","id":534331285,"pet":{"birthDate":"2021-11-29T18:37:36","id":534331285,"name":"a7u54bMCPS8JMKkwnaL"}}Expected Responses: 
+200 201 401 403 404 
+Returned Response: 404
+Response Time: 18 ms
+Priority: 0.0
+
+----------------------------------------
+url: http://host.docker.internal:9090/error
+Method: GET
+Expected Responses: 
+200 401 403 404 
+Returned Response: 404
+Response Time: 30 ms
+Priority: 0.0
+
+----------------------------------------
+url: http://host.docker.internal:9090/error
+Method: PUT
+Expected Responses: 
+200 201 401 403 404 
+Returned Response: 404
+Response Time: 12 ms
+Priority: 0.0
+
+----------------------------------------
+url: http://host.docker.internal:9090/error
+Method: POST
+Expected Responses: 
+200 201 401 403 404 
+Returned Response: 404
+Response Time: 10 ms
+Priority: 0.0

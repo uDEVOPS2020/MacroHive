@@ -1,0 +1,7 @@
+JSONDoc/Files/swagger_8081.json**
+JSONDoc/Files/swagger_8082.json
+JSONDoc/Files/swagger_8083.json**
+JSONDoc/Files/swagger_8084.json**
+JSONDoc/Files/swagger_8085.json**
+JSONDoc/Files/swagger_8086.json**
+JSONDoc/Files/swagger_8089.json**

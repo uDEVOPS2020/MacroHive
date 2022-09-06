@@ -1,0 +1,5 @@
+JSONDoc/Files/slim.json**
+JSONDoc/Files/airline.json**
+JSONDoc/Files/streaming.json**
+JSONDoc/Files/petclinic.json
+JSONDoc/Files/safrs.json**

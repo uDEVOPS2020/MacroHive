@@ -1,0 +1,5 @@
+JSONDoc/Files/1-carts.json
+JSONDoc/Files/2-catalogue.json
+JSONDoc/Files/3-orders.json
+JSONDoc/Files/4-payment.json
+JSONDoc/Files/5-user.json

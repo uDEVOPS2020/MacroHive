@@ -1,0 +1,20 @@
+
+
+***************** CONFIGURATION
+Json File: JSONFiles.txt
+Generation mode: pairwise_valid
+Execution mode: skip_timeout
+Prioritization mode: only_severe
+Prioritization focus: method
+Random buffer: 10
+Login mode: no_login
+
+***************** Generating Test 
+[INFO] Generation time: 00:00:084
+
+***************** Generation Done
+
+Requesting time: 00:05:110
+
+***************** Analysis
+***************** Finished

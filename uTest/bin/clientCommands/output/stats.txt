@@ -1,0 +1,114 @@
+
+***************** Generation Statistics
+Total paths count: 17
+Total methods count: 47
+Total tests generated: 45
+
+***************** Execution statistics
+Executed test: 45
+Success: 31
+Test Failures: 14 (Severe: 0)
+Method failures: 14 (Severe: 0)
+Coverage (3 class): 0.33333334
+Coverage (2 class): 0.5
+
+----- FailCode ----- # -----
+-      404       14
+
+----- SuccCode ----- # -----
+-      404       31
+
+----- Method ----- # -----
+-      HEAD       2
+-      DELETE     8
+-      OPTIONS    2
+-      PATCH      2
+
+
+----- Severity ----- # -----
+-        1           14
+
+----- Response times (success and failures)
+- max        317 ms
+- min        9 ms
+- avg        31 ms
+
+
+Path: 1 - http://host.docker.internal:9090/
+	GET, statusHTTP 1, statusSPEC 0
+	PUT, statusHTTP 1, statusSPEC 0
+	POST, statusHTTP 1, statusSPEC 0
+	DELETE, statusHTTP 1, statusSPEC 1
+	PATCH, statusHTTP 1, statusSPEC 1
+	HEAD, statusHTTP 1, statusSPEC 1
+	OPTIONS, statusHTTP 1, statusSPEC 1
+
+Path: 2 - http://host.docker.internal:9090/api/owners
+	GET, statusHTTP 1, statusSPEC 0
+	POST, statusHTTP 1, statusSPEC 0
+
+Path: 3 - http://host.docker.internal:9090/api/owners/*/lastname/{lastName}
+	GET, statusHTTP 1, statusSPEC 0
+
+Path: 4 - http://host.docker.internal:9090/api/owners/{ownerId}
+	GET, statusHTTP 1, statusSPEC 0
+	PUT, statusHTTP 1, statusSPEC 0
+	DELETE, statusHTTP 1, statusSPEC 1
+
+Path: 5 - http://host.docker.internal:9090/api/pets
+	GET, statusHTTP 1, statusSPEC 0
+
+Path: 6 - http://host.docker.internal:9090/api/pets/pettypes
+	GET, statusHTTP 1, statusSPEC 0
+
+Path: 7 - http://host.docker.internal:9090/api/pets/{petId}
+	GET, statusHTTP 1, statusSPEC 0
+	PUT, statusHTTP 1, statusSPEC 0
+	DELETE, statusHTTP 1, statusSPEC 1
+
+Path: 8 - http://host.docker.internal:9090/api/pettypes
+	GET, statusHTTP 1, statusSPEC 0
+	POST, statusHTTP 1, statusSPEC 0
+
+Path: 9 - http://host.docker.internal:9090/api/pettypes/{petTypeId}
+	GET, statusHTTP 1, statusSPEC 0
+	PUT, statusHTTP 1, statusSPEC 0
+	DELETE, statusHTTP 1, statusSPEC 1
+
+Path: 10 - http://host.docker.internal:9090/api/specialties
+	GET, statusHTTP 1, statusSPEC 0
+	POST, statusHTTP 1, statusSPEC 0
+
+Path: 11 - http://host.docker.internal:9090/api/specialties/{specialtyId}
+	GET, statusHTTP 1, statusSPEC 0
+	PUT, statusHTTP 1, statusSPEC 0
+	DELETE, statusHTTP 1, statusSPEC 1
+
+Path: 12 - http://host.docker.internal:9090/api/users
+	POST, statusHTTP 1, statusSPEC 0
+
+Path: 13 - http://host.docker.internal:9090/api/vets
+	GET, statusHTTP 1, statusSPEC 0
+	POST, statusHTTP 1, statusSPEC 0
+
+Path: 14 - http://host.docker.internal:9090/api/vets/{vetId}
+	GET, statusHTTP 1, statusSPEC 0
+	PUT, statusHTTP 1, statusSPEC 0
+	DELETE, statusHTTP 1, statusSPEC 1
+
+Path: 15 - http://host.docker.internal:9090/api/visits
+	GET, statusHTTP 1, statusSPEC 0
+
+Path: 16 - http://host.docker.internal:9090/api/visits/{visitId}
+	GET, statusHTTP 1, statusSPEC 0
+	PUT, statusHTTP 1, statusSPEC 0
+	DELETE, statusHTTP 1, statusSPEC 1
+
+Path: 17 - http://host.docker.internal:9090/error
+	GET, statusHTTP 1, statusSPEC 0
+	PUT, statusHTTP 1, statusSPEC 0
+	POST, statusHTTP 1, statusSPEC 0
+	DELETE, statusHTTP 1, statusSPEC 1
+	PATCH, statusHTTP 1, statusSPEC 1
+	HEAD, statusHTTP 1, statusSPEC 1
+	OPTIONS, statusHTTP 1, statusSPEC 1

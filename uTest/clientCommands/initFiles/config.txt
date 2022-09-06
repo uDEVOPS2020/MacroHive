@@ -1,0 +1,98 @@
+***********************************************************************
+**************************** INSTRUCTIONS *****************************
+***********************************************************************
+**	
+**	JSON_FILE=<file with json names to parse>
+**	GENERATION_MODE=<Generation criterion>
+**	EXECUTION_MODE=<Execution criterion>
+**	PRIORITIZATION_MODE=<Prioritization criterion>
+**	PRIORITIZATION_FOCUS=<Prioritization focus criterion>
+**	RANDOM_BUFFER=<N tests random to initialize priorities>
+**	LOGIN_MODE=<Login mode>
+**	
+**	!	- with Generation Mode "bounded" you need to specify:
+**			BOUND=<Upper bound of test x Method>
+**
+**	!	- with "LOGIN_MODE=login" you need to specify:
+**		    |	USERNAME=<username>
+**		    |	PASSWORD=<password>
+**		    |	LOGIN_URL=<url for login request>
+**			OR
+**		    |	TOKEN=<authentication token>
+**	
+**	!	- "**" = ignored line.
+**		  Uncomment lines you need from template below.
+**
+**	!	- Don't leave empty lines or empty spaces
+**
+**	!	- Respect the order of the parameters
+**
+**
+***********************************************************************
+**************************** CONFIGURATION ****************************
+***********************************************************************
+**
+JSON_FILE=JSONFiles.txt
+GENERATION_MODE=base_valid
+**BOUND=256
+EXECUTION_MODE=skip_timeout
+PRIORITIZATION_MODE=only_severe
+PRIORITIZATION_FOCUS=method
+RANDOM_BUFFER=10
+LOGIN_MODE=login
+USERNAME=admin
+PASSWORD=222222
+LOGIN_URL=http://host.docker.internal:12340/api/v1/users/login
+**TOKEN=hello
+**
+***********************************************************************
+******************************** MODES ********************************
+***********************************************************************
+**
+**	Generation modes:
+**
+**		- base_valid
+**		- base_invalid
+**		- base_valid_invalid
+**		- full
+**		- full_invalid
+**		- full_bounded
+**		- full_invalid_bounded
+**		- pairwise	
+**		- pairwise_valid
+**		- pairwise_invalid
+**		- all_class
+**
+**	Execution modes:
+**
+**		- normal
+**		- skip_timeout
+**		
+**	Prioritization modes:
+**
+**		- all_failure
+**		- only_severe
+**
+**	Prioritization focus:
+**
+**		- test
+**		- method
+**
+**	Login modes:
+**
+**		- no_login
+**		- login
+**      - token
+**
+***********************************************************************
+**  TT_login:
+**      admin:222222 - http://host.docker.internal:12340/api/v1/users/login
+**      fdse_microservice:111111
+**  
+**  SS_login:
+**      user:password - http://localhost/user/login
+**
+**
+**
+***********************************************************************
+***********************************************************************

@@ -1,0 +1,25 @@
+
+***************** Generation Statistics
+Total paths count: 5
+Total methods count: 5
+Total tests generated: 47
+
+# Executed test: 42
+# Failures: 0
+
+----- Code ----- # -----
+-      -1*       5
+
+*code -1 = SocketTimeoutException 
+*code -2 = HTTP method not yet implemented
+
+----- Method ----- # -----
+
+
+----- Severity ----- # -----
+-        0           5
+
+----- Response times (success and failures)
+- max        0 ms
+- min        0 ms
+- avg        0 ms
