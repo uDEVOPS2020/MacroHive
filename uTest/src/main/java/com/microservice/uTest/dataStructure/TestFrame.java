@@ -463,7 +463,9 @@ public class TestFrame {
 				response.append(responseString);
 			}
 
-		} 
+		} finally{
+			
+		}
 	}
 	
 

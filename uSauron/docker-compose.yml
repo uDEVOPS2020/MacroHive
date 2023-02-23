@@ -1,6 +1,6 @@
 version: '3'
 services:
-    uproxy:
+    usauron:
         container_name: usauron
         build:
             context: .

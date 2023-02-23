@@ -26,6 +26,8 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
+import com.microservice.uTest.executor.TestExecutor;
+
 @RestController
 public class RequestController {
 
@@ -324,5 +326,32 @@ public class RequestController {
 		}
 
 	}
+
+	@GetMapping("/execute_next")
+	String getExecuteNext() {
+		System.out.println("[INFO] [RequestController] Execute next GET request received");
+		logWriter.println("[INFO] [RequestController] Execute next GET request received");
+
+		TestExecutor.EXECUTE_NEXT = true;
+
+		return "[INFO] Executing next..\n";
+	}
+
+	@GetMapping("/execution_status")
+	String getExecutionStatus() {
+		System.out.println("[INFO] [RequestController] Execution status GET request received");
+		logWriter.println("[INFO] [RequestController] Execution status GET request received");
+
+		String returnValue = "invalid";
+
+		if(TestExecutor.EXECUTE_NEXT){
+			returnValue = "true";	
+		}else{
+			returnValue = "false";
+		}
+
+		return returnValue;
+	}
+	
 
 }

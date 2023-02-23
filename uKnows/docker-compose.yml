@@ -1,0 +1,10 @@
+version: '3'
+services:
+    uknows:
+        container_name: uknows
+        build:
+            context: .
+            dockerfile: Dockerfile
+        image: uknows:latest
+        ports:
+            - 11113:11113

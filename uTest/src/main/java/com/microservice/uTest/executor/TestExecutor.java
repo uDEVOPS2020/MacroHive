@@ -19,12 +19,17 @@ import com.microservice.uTest.prioritizer.TestFramePrioritizer;
 
 public class TestExecutor {
 	private static boolean DEBUG_MODE = false;
-	private static boolean NOTIFY_MODE = false;
+	private static boolean NOTIFY_MODE = true;
+	private static boolean SINGULAR_EXEC = false;
+
 	private String executionMode;
 	private String priorityMode;
 	private String priorityFocus;
 	private String authToken;
 	private int dynamicRequestBuffer;
+
+	//not to be modified manually
+	public static boolean EXECUTE_NEXT = true;	
 
 	public TestExecutor(boolean debug, boolean notify, String exec, String token) {
 		DEBUG_MODE = debug;
@@ -400,6 +405,23 @@ public class TestExecutor {
 				if (NOTIFY_MODE)
 					UTestApplication.notifier.notifyStartTest(testFrames.get(testSelected.get(i)).getTfID());
 
+				if (SINGULAR_EXEC){
+					boolean printMex = true;
+					while(!EXECUTE_NEXT){
+						try{
+							if(printMex){
+								System.out.println("[INFO] [TestExecutor] Waiting for next test notification..");
+								printMex = false;
+							}
+							Thread.sleep(1000);
+						}catch(Exception exception){
+							System.out.println("[ERROR] [TestExecutor] Something went wrong waiting for next test..");
+							logWriter.println("[ERROR] [TestExecutor] Something went wrong waiting for next test..");
+						}
+					}
+					System.out.println("[INFO] [TestExecutor] Executing next test..");
+				}
+				
 				e = testFrames.get(testSelected.get(i)).extractAndExecuteTestCase();
 
 				if (NOTIFY_MODE)
@@ -429,9 +451,14 @@ public class TestExecutor {
 					}
 					e = false;
 				}
+
+				EXECUTE_NEXT = false;
+				// if (SINGULAR_EXEC){
+				// 	System.out.println("[INFO] [TestExecutor] Test executed..");
+				// }
+
 			}
 		}
-
 
 		logWriter.flush();
 	}
@@ -847,5 +874,13 @@ public class TestExecutor {
 	public void setExecutionMode(String executionMode) {
 		this.executionMode = executionMode;
 	}
+	
+	// public static String getStartStop() {
+	// 	return EXECUTE_NEXT;
+	// }
+
+	// public static void setStartStop(boolean _flag) {
+	// 	EXECUTE_NEXT = _flag;
+	// }
 
 }

@@ -21,7 +21,6 @@ ts-auth-service_f,ts-user-service_f
 ts-order-service_f,ts-execute-service_f
 ts-basic-service_f,ts-ticketinfo-service_f
 ts-security-service_f,ts-preserve-other-service_f
-ts-contacts-service_f,ts-preserve-other-service_f
 ts-travel-service_f,ts-admin-travel-service_f
 ts-travel2-service_f,ts-admin-travel-service_f
 ts-route-service_f,ts-admin-route-service_f
@@ -29,15 +28,15 @@ ts-travel-service_f,ts-route-plan-service_f
 ts-station-service_f,ts-route-plan-service_f
 ts-route-service_f,ts-route-plan-service_f
 ts-security-service_f,ts-preserve-service_f
-ts-contacts-service_f,ts-preserve-service_f
 ts-food-map-service_f,ts-food-service_f
 ts-travel-service_f,ts-food-service_f
 ts-route-plan-service_f,ts-travel-plan-service_f
 ts-travel-service_f,ts-travel-plan-service_f
 ts-order-other-service_f,ts-rebook-service_f
 ts-order-service_f,ts-rebook-service_f
-ts-order-service_f,ts-admin-order-service_f
 ts-order-other-service_f,ts-admin-order-service_f
 ts-order-other-service_f,ts-inside-payment-service_f
 ts-travel2-service_f,ts-seat-service_f
 ts-order-other-service_f,ts-seat-service_f
+ts-travel-service_f,ts-seat-service_f
+ts-order-service_f,ts-seat-service_f
