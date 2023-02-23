@@ -57,4 +57,4 @@ api.add_resource(compute, '/compute')
 api.add_resource(clear, '/clear')
 
 if __name__ == '__main__':
-    app.run(host='127.0.0.1', port=11113)  # run our Flask app
+    app.run(host='0.0.0.0', port=11113)  # run our Flask app
